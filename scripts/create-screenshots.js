@@ -57,6 +57,7 @@ async function makeScreenshots(helpers, { screenshotCacheDir }) {
     args: chrome.args,
     executablePath: await chrome.executablePath,
     headless: true,
+    ignoreHTTPSErrors: true
   });
   const limit = pLimit(8);
   const screenshotPromises = helpers.map((helper) =>
